@@ -25,32 +25,69 @@ public class GetCashbackBasedOfStore {
         if (storeName == null)
             return message;
 
+        /*
+            ChaseFreedom - 0
+            BestBuy - 1
+            BankOfAmerica - 2
+            AppleStoreCard - 3
 
+         */
 
         switch (storeName){
             case "AppleStore" :
                 message = "{\n" +
                         "    \"cashbackInfo\": [\n" +
-                        "        {\n" +
-                        "            \"value\": 1.5,\n" +
-                        "            \"walletCardId\": 0\n" +
-                        "        },\n" +
-                        "        {\n" +
-                        "            \"value\": 1.2,\n" +
-                        "            \"walletCardId\": 2\n" +
-                        "        },\n" +
-                        "        {\n" +
-                        "            \"value\": 1,\n" +
-                        "            \"walletCardId\": 1\n" +
-                        "        },\n" +
-                        "        {\n" +
-                        "            \"value\": 0.5,\n" +
-                        "            \"walletCardId\": 3\n" +
-                        "        }\n" +
+                        "        { \"value\": 3.0, walletCardId\": 3 } ," +
+                        "        { \"value\": 1.5, walletCardId\": 0 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 1 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 2 } " +
                         "    ]\n" +
                         "}\n";
                 break;
 
+            case "BestBuy" :
+                message = "{\n" +
+                        "    \"cashbackInfo\": [\n" +
+                        "        { \"value\": 2.0, walletCardId\": 1 } ," +
+                        "        { \"value\": 1.5, walletCardId\": 0 } ," +
+                        "        { \"value\": 0.5, walletCardId\": 3 } ," +
+                        "        { \"value\": 0.5, walletCardId\": 2 } " +
+                        "    ]\n" +
+                        "}\n";
+                break;
+
+            case "Target" :
+                message = "{\n" +
+                        "    \"cashbackInfo\": [\n" +
+                        "        { \"value\": 3.0, walletCardId\": 3 } ," +
+                        "        { \"value\": 1.5, walletCardId\": 2 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 0 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 1 } " +
+                        "    ]\n" +
+                        "}\n";
+                break;
+
+            case "GasStation" :
+                message = "{\n" +
+                        "    \"cashbackInfo\": [\n" +
+                        "        { \"value\": 2.0, walletCardId\": 2 } ," +
+                        "        { \"value\": 1.5, walletCardId\": 0 } ," +
+                        "        { \"value\": 1.2, walletCardId\": 1 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 3 } " +
+                        "    ]\n" +
+                        "}\n";
+                break;
+
+            case "Others" :
+                message = "{\n" +
+                        "    \"cashbackInfo\": [\n" +
+                        "        { \"value\": 1.5, walletCardId\": 0 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 2 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 1 } ," +
+                        "        { \"value\": 1.0, walletCardId\": 3 } " +
+                        "    ]\n" +
+                        "}\n";
+                break;
             default :
                 message="{\"Not A Valid Store\"}";
                 break;
